@@ -9,14 +9,7 @@ exports.config = {
     maxInstances: 10,
     headless: true,
     capabilities: [
-        {
-        maxInstances: 5,
-        browserName: 'chrome',
-        acceptInsecureCerts: true,
-        'goog:chromeOptions': {
-            args: ['headless', 'disable-gpu']
-        }
-    },
+        
     {
         maxInstances: 5,
         browserName: 'firefox',
@@ -28,12 +21,12 @@ exports.config = {
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://8704e818-2ca4-4830-8041-be780f968c97.serverhub.tripleten-services.com',
+    baseUrl: 'https://36f2d908-56bf-4d46-b9c3-4f8ddf1f0142.serverhub.tripleten-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [
-        'chromedriver', 
+        
         'geckodriver', 
         'intercept', 
     ],

@@ -7,6 +7,7 @@ module.exports = {
     cardNumber: '#number',
     cardCode: '.card-second-row #code',
     messageButton: '#comment',
+    icecreamvalue: '.counter-value',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',

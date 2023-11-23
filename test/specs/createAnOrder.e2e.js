@@ -13,54 +13,57 @@ describe('Create an order', () => {
     }) */
 
     it('should wait for the taxi driver', async () => {
-        // Call the taxi to the address
         await browser.url(`/`)
-        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+        await page.fillAddresses('East 2nd Street, 601', '1300 1st St'); 
+    }),
 
-        //Selecting Supportive plan
+    it('Should selecting supportive plan', async () => {   
         await page.addSupportiveButton();
 
         const SupportiveButton = $(page.clickSupportiveButton);
         await SupportiveButton.waitForDisplayed();
-        await expect(SupportiveButton).toBeExisting();
+        await expect(SupportiveButton).toBeExisting(); 
+    }),
 
-   
-        //Adding a payment card
+    it('Should add a payment card', async () => { 
         await page.addPaymentMethodCard();
 
         const cardPaymentmethodIcons = $(page.cardPaymentmethodIcon);
         await cardPaymentmethodIcons.waitForDisplayed();
         await expect(cardPaymentmethodIcons).toBeExisting(); 
+    }),
 
-
-        //Input phone number
+   it('Should input phone number', async () => {
         const phoneNumber = helper.getPhoneNumber("+1");
         await page.submitPhoneNumber(phoneNumber);
         await expect(await helper.getElementByText(phoneNumber)).toBeExisting(); 
+    }),
         
-       //Writing a message for the driver
+    it('Should writing a message for the driver', async () => {
       await page.addmessagetoDriver();
 
       const message = $ (page.messageButton);
       await message.waitForDisplayed();
-      await expect(message).toBeExisting();
+      await expect(message).toBeExisting(); 
+    })
 
-
-       //Ordering a Blanket and handkerchiefs
+    it('Should order a blanket and handkerchiefs', async () => {
        await page.orderingblanket();
 
        const Blanket = $ (page.selectBlanketButton);
        await Blanket.waitForDisplayed();
        await expect(Blanket).toBeExisting(); 
+    }),
 
-       //Ordering 2 Ice creams
+    it('Should order 2 Ice creams', async () => {
        await page.orderingIceCream();
 
-       const IceCream = $ (page.ordericecreamButtonPlus);
+       const IceCream = $ (page.icecreamvalue);
        await IceCream.waitForDisplayed();
        await expect(IceCream).toBeExisting(); 
+    }),
 
-       //The car search modal appears
+    it('Should the car search modal appears', async () => {
        await page.searchcarButton();
 
        const CarButton = $ (page.orderButton);
