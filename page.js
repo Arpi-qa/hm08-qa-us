@@ -18,7 +18,7 @@ module.exports = {
     linkcardButton: 'button=Link',
     closePaymentMethodButton: '.payment-picker .close-button',
     clickSupportiveButton: '//div[contains(text(),"Supportive")]',
-    selectBlanketButton: '.switch',
+    selectBlanketButton: '(//div[@class="switch"])[1]',
     ordericecreamButtonPlus: '.counter-plus',
     ordericecreamButtonMinus:'.counter-minus',
     orderTaxiButton: '.smart-button-wrapper',
@@ -113,6 +113,7 @@ orderingIceCream: async  function () {
 
        const ordericecreamButtonPlus = $ (this.ordericecreamButtonPlus);
        await ordericecreamButtonPlus.waitForDisplayed();
+       await ordericecreamButtonPlus.click();
        await ordericecreamButtonPlus.click();
 
 },

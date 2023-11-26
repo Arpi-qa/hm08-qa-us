@@ -15,13 +15,13 @@ exports.config = {
         browserName: 'firefox',
         acceptInsecureCerts: true,
         'moz:firefoxOptions': {
-            args: ['-headless']
+            //args: ['-headless']
         }
     }
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://36f2d908-56bf-4d46-b9c3-4f8ddf1f0142.serverhub.tripleten-services.com',
+    baseUrl: 'https://1776a669-7006-43b1-99f2-64e273443d2a.serverhub.tripleten-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
